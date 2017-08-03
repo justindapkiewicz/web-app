@@ -1,0 +1,34 @@
+{
+  "name": "wa-front-end",
+  "version": "0.1.0",
+  "homepage": "https://github.com/justindapkiewicz/web-app.git",
+  "authors": [
+    "Justin Dapkiewicz"
+  ],
+  "description": "Front End for WA",
+  "license": "Private",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "devDependencies": {
+  },
+  "dependencies": {
+    "angular": "~1.3.x",
+    "angular-animate": "~1.3.x",
+    "angular-bootstrap": "~0.12.0",
+    "angular-cookies": "~1.3.x",
+    "angular-loader": "~1.3.x",
+    "angular-mocks": "~1.3.x",
+    "angular-resource": "~1.3.x",
+    "angular-route": "~1.3.x",
+    "angular-sanitize": "~1.3.x",
+    "angular-scenario": "~1.3.x",
+    "foundation": "zurb/bower-foundation#~5.5.1"
+  },
+  "resolutions": {
+    "angular": "~1.3.x"
+  }
+}

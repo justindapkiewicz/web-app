@@ -1,0 +1,50 @@
+<div class="about-us">
+  <div class="row">
+    <div class="columns small-12 medium-6">
+      <div class="box">
+        <div class="box-icon">
+          <img class="founding-images" src="http://fillmurray.com/200/150" />
+        </div>
+        <div class="info">
+          <h4 class="text-center">Daniel Provost</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!</p>
+        </div>
+      </div>
+    </div>
+    <div class="columns small-12 medium-6">
+      <div class="box">
+        <div class="box-icon">
+            <img class="founding-images" src="http://fillmurray.com/199/150" />
+        </div>
+        <div class="info">
+          <h4 class="text-center">Beatrice Provost</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small-12">
+      <div class="mission">
+        <h2>Our Mission...</h2>
+        <div class="panel">
+          <h5>Financially support students who attend private parochial schools striving for excellence in the areas of academics and athletics. The foundation provides tuition grants that offer students an opportunity for unique depth and breadth to their educational and athletic experiences.  In doing so, we hope students will graduate with academic distinction, leadership skills and distinguished moral principles.</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small-12">
+      <hr />
+      <button class="button expand" 
+              ng-show="!showme" 
+              ng-click="showme = !showme">
+        Meet the contributors behind the Foundation!
+      </button>
+    </div>
+  </div>
+  <div ng-show="showme">
+    <contributors-directive></contributors-directive>
+  </div>
+  
+</div>

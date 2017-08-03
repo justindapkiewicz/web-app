@@ -1,0 +1,30 @@
+{
+  "name": "wa-front-end",
+  "version": "0.1.0",
+  "description": "Front End for wa",
+  "main": "Gruntfile.js",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justindapkiewicz/web-app.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-browserify-bower": "~0.1.4",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-run": "~0.3.0",
+    "grunt-sass": "^1.0.0",
+    "istanbul": "^0.3.2",
+    "jit-grunt": "^0.9.1",
+    "jshint": "~2.5.5",
+    "time-grunt": "^1.2.1"
+  },
+  "license": "Private",
+  "author": "Justin Dapkiewicz"
+}

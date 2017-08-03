@@ -1,0 +1,22 @@
+# Temporary files
+*.swp
+*~
+
+# OSX Finder cache files
+.DS_Store
+
+# Front End Development node packages
+front/node_modules
+.sass-cache/
+bower_components/
+*.css.map
+
+# Server Side Development node packages
+server/node_modules
+
+# Front-end static files
+front/static/css/
+front/static/html/
+front/static/js/
+
+# Server Side Development node packages
