@@ -1,12 +1,12 @@
 {
-  "name": "PF-Server",
+  "name": "WA-Server",
   "version": "0.1.0",
-  "description": "PF",
+  "description": "WA",
   "main": "Gruntfile.js",
-  "private": true,
+  "private": false,
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/justindapkiewicz/provost-foundation"
+    "url": "https://github.com/justindapkiewicz/web-app.git"
   },
   "author": "Justin Dapkiewicz",
   "license": "Private",
