@@ -7,11 +7,7 @@ angular.module('WA',
                   'wa.FooterModule.directives',
                   'wa.LinksModule.directives',
                   'wa.AboutModule.controller',
-                  'wa.ApplyModule.controller',
-                  'wa.TestimonialsModule.controller',
-                  'wa.ContactModule.controller',
-                  'wa.MapModule.controller',
-                  'wa.ContributorsModule.directives'])
+                  'wa.ContactModule.controller'])
 .config(['$routeProvider', function($routeProvider) {
 
   $routeProvider
@@ -23,21 +19,9 @@ angular.module('WA',
       templateUrl: 'html/about.html',
       controller: 'AboutController'
     })
-    .when('/apply', {
-      templateUrl: 'html/apply.html',
-      controller: 'ApplyController'
-    })
-    .when('/testimonials', {
-      templateUrl: 'html/testimonials.html',
-      controller: 'TestimonialsController'
-    })
     .when('/contact', {
       templateUrl: 'html/contact.html',
       controller: 'ContactController'
-    })
-    .when('/map', {
-      templateUrl: 'html/map.html',
-      controller: 'MapController'
     })
     .otherwise({
       redirectTo: '/'

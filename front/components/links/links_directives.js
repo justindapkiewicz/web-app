@@ -12,17 +12,9 @@ function(){
 
     $scope.linkOptions = [
       {
-        "title": "About Us",
+        "title": "About Me",
         "description": "About Us",
         "url": "#/about"
-      }, {
-        "title": "Apply Now",
-        "description": "Apply Now",
-        "url": "#/apply"
-      }, {
-        "title": "Testimonials",
-        "description": "Testimonials",
-        "url": "#/testimonials"
       }
     ];
 
