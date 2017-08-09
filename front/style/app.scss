@@ -9,6 +9,10 @@
 @import '../components/links/links.scss';
 @import '../components/about/about.scss';
 @import '../components/contact/contact.scss';
+@import '../components/login/login.scss';
+@import '../components/lists/lists.scss';
+@import '../components/workLog/workLog.scss';
+@import '../components/account/account.scss';
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -52,6 +56,9 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+.center {
+  text-align: center;
 }
 
 

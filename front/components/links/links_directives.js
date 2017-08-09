@@ -15,6 +15,10 @@ function(){
         "title": "About Me",
         "description": "About Us",
         "url": "#/about"
+      }, {
+        "title": "Lists",
+        "description": "Lists",
+        "url": "#/lists"
       }
     ];
 
