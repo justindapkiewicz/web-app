@@ -34,13 +34,10 @@ db.on('disconnected', console.log.bind(console, 'disconnected from server'));
 
 // Login a user
 app.get('/login', function(req, res, next) {
-  user.login(req.query.username, req.query.password, function(data) {
-    res.send(data);
-  });
-});
+  var uname = req.query.username;
+  var pword = req.query.password;
 
-app.get('/api/user', function(req, res) {
-  user.retrieve(function(data) {
+  user.login(uname, pword, function(data) {
     res.send(data);
   });
 });

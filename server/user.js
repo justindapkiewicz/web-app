@@ -8,7 +8,8 @@ module.exports =function() {
       sessionId: String,
       username: String,
       password: String,
-      permision: String
+      permission: String,
+      realName: String
     }),
     login: function(username, password, callback) {
       user.model.findOne({username : username}, function(err, foundUser) {
@@ -23,7 +24,7 @@ module.exports =function() {
           console.log('login successful');
           foundUser.sessionId = uuid.v4();
           foundUser.save();
-          return callback(foundUser.sessionId);
+          return callback(foundUser);
         }
         else {
           console.log("invalid password");

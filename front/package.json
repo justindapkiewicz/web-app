@@ -26,5 +26,8 @@
     "time-grunt": "^1.2.1"
   },
   "license": "Private",
-  "author": "Justin Dapkiewicz"
+  "author": "Justin Dapkiewicz",
+  "dependencies": {
+    "ui-router": "^1.0.0-alpha.3"
+  }
 }
