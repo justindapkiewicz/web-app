@@ -9,7 +9,9 @@ function($scope, ajaxUtil, $cookies, $location, userUtility) {
   };
 
   $scope.login = function() {
-    ajaxUtil.get("/login?username="+$scope.loginData.username+'&password='+$scope.loginData.password, $scope, "onLogin", "onLoginError", true);
+    var loginUrl = '/login?username='+$scope.loginData.username+'&password='+$scope.loginData.password;
+    
+    ajaxUtil.get(loginUrl, $scope, "onLogin", "onLoginError", true);
   };
 
   $scope.onLogin = function(data) {

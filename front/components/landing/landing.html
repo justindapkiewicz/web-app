@@ -4,15 +4,25 @@
     <form name="credentials">
       <div class="input-group login-inputs">
         <span class="input-group-addon">Username</span>
-        <input ng-model="loginData.username" type="text" class="username form-control" required />
+        <input ng-model="loginData.username" 
+               type="text" 
+               class="username form-control" 
+               required />
       </div>
       
       <div class="input-group login-inputs">
         <span class="input-group-addon">Password</span>
-        <input ng-model="loginData.password" type="password" class="password form-control" required />
+        <input ng-model="loginData.password" 
+               type="password" 
+               class="password form-control" 
+               required />
       </div>
 
-      <button class="btn btn-lg btn-primary" ng-click="login()" ng-disabled="credentials.$invalid">Submit</button>
+      <button class="btn btn-lg btn-primary" 
+              ng-click="login()" 
+              ng-disabled="credentials.$invalid">
+        Submit
+      </button>
       <a href="#" class="right">Forgot password</a>
     </form>
   </div>
