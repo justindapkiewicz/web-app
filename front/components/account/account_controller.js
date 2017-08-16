@@ -1,6 +1,6 @@
-angular.module('wa.AccountModule.controller',['ngCookies'])
-.controller('AccountController', ['$scope', '$cookies', 'userUtility', '$state',
-function($scope, $cookies, userUtility, $state) {
+angular.module('wa.AccountModule.controller',[])
+.controller('AccountController', ['$scope', 'userUtility', '$state',
+function($scope, userUtility, $state) {
   'use strict';
 
   $scope.id = userUtility.user.id;

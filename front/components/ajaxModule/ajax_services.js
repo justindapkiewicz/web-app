@@ -22,8 +22,6 @@ function($http, $q) {
 
     var message = response.status === 400 ? response.data.message : DEFAULT_ERROR_MESSAGE;
 
-    errorCallback = errorCallback || callback;
-
     if (errorCallback && errorCallback !== callback) {
       scope[errorCallback](message, response.status);
     }
