@@ -1,19 +1,15 @@
-angular.module('wa.AccountModule.controller',['ngCookies', 'wa.UserUtility'])
-.controller('AccountController', ['$scope', '$cookies', 'userUtility', '$location',
-function($scope, $cookies, userUtility, $location) {
+angular.module('wa.AccountModule.controller',['ngCookies'])
+.controller('AccountController', ['$scope', '$cookies', 'userUtility', '$state',
+function($scope, $cookies, userUtility, $state) {
   'use strict';
 
-  $scope.active = userUtility.isUser;
-  $scope.activeId = userUtility.id;
-  $scope.activeName = userUtility.realName;
-  $scope.activeRights = userUtility.permission;
+  $scope.id = userUtility.user.id;
 
   // User Logout ///////////////////////////////////////////////
 
   $scope.logout = function() {
-    $cookies.CSIuuid = null;
-    userUtility.isUser = false;
-    $location.path('/home');
+    userUtility.logout();
+    $state.go('home');
   };
 
 }]);

@@ -18,7 +18,7 @@ module.exports =function() {
         }
         else if(!foundUser) {
           console.log('user not found with foundUsername');
-          return callback(400);
+          return callback(404);
         }
         else if(bCrypt.compareSync(password, foundUser.password)) {
           console.log('login successful');
@@ -28,7 +28,28 @@ module.exports =function() {
         }
         else {
           console.log("invalid password");
-          return callback(400);
+          return callback(401);
+        }
+      });
+    },
+    logout: function(cookie, callback) {
+      user.model.findOne({sessionId : cookie}, function(error, foundUser) {
+        if (error) {
+          console.log('Session ID not found');
+          return callback(404);
+        }
+        else {
+          user.model.update({sessionId: cookie}, 
+                            {$unset: {sessionId: null}}, 
+                            function(error, result) {
+            if (error) {
+              console.log('Error deleting cookie');
+              return callback(400);
+            }
+            if (result.ok) {
+              return callback(200)
+            }
+          });
         }
       });
     },

@@ -34,10 +34,24 @@ db.on('disconnected', console.log.bind(console, 'disconnected from server'));
 
 // Login a user
 app.get('/login', function(req, res, next) {
-  var uname = req.query.username;
-  var pword = req.query.password;
+  var username = req.query.username;
+  var password = req.query.password;
 
-  user.login(uname, pword, function(data) {
+  user.login(username, password, function(data) {
     res.send(data);
   });
+});
+
+// Remove Cookies from active user
+app.post('/api/user/logout', function(req, res) {
+  if (req.headers.cookie) {
+    var cookie = req.headers.cookie.split('=')[1];
+
+    user.logout(cookie, function(data) {
+      res.send(data);
+    })
+  }
+  else {
+    res.redirect('/#/home');
+  }
 });

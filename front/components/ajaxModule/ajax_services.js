@@ -20,11 +20,17 @@ function($http, $q) {
       return;
     }
 
-    errorCallback = errorCallback || callback;
-
     var message = response.status === 400 ? response.data.message : DEFAULT_ERROR_MESSAGE;
 
-    scope[errorCallback](null, message, response.status);
+    errorCallback = errorCallback || callback;
+
+    if (errorCallback && errorCallback !== callback) {
+      scope[errorCallback](message, response.status);
+    }
+    else {
+      scope[callback](null, message, response.status);
+    }
+    
   }
 
   function makeRequest(requestType, path, data, scope, callback, errorCallback, keepAlive, isForm) {
