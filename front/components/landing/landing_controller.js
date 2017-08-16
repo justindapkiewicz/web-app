@@ -1,6 +1,6 @@
-angular.module('wa.LandingModule.controller', ['AjaxModule', 'ngCookies', 'wa.UserUtility'])
-.controller('LandingController', ['$scope', 'ajaxUtil', '$cookies', '$location', 'userUtility',
-function($scope, ajaxUtil, $cookies, $location, userUtility) {
+angular.module('wa.LandingModule.controller', ['AjaxModule', 'ngCookies'])
+.controller('LandingController', ['$scope', 'ajaxUtil', '$cookies', '$state', 'userUtility',
+function($scope, ajaxUtil, $cookies, $state, userUtility) {
   'use strict';
 
   $scope.loginData = {
@@ -8,23 +8,33 @@ function($scope, ajaxUtil, $cookies, $location, userUtility) {
     password: ""
   };
 
+  $scope.message = "";
+
   $scope.login = function() {
     var loginUrl = '/login?username='+$scope.loginData.username+'&password='+$scope.loginData.password;
-    
+
     ajaxUtil.get(loginUrl, $scope, "onLogin", "onLoginError", true);
   };
 
   $scope.onLogin = function(data) {
     $scope.loginData = {};
-    $cookies.CSIuuid = data.sessionId;
-    userUtility.isUser = true;
-    userUtility.id = data.username;
-    userUtility.realName = data.realName;
-    userUtility.permission = data.permission;
-    $location.path('/account');
+    $scope.message = "";
+    userUtility.defineUserData(data);
+    $state.go('account');
   };
 
-  $scope.onLoginError = function(err) {
-    console.log(err);
+  $scope.onLoginError = function(error, status) {
+    $scope.loginData.password = null;
+
+    switch (status) {
+      case 404:
+        $scope.message = "We cannot find an account with that ID";
+        break;
+      case 401:
+        $scope.message = "Your password is incorrect";
+        break;
+      default:
+        $scope.message = "We recieved an unexpected error - Please try again";
+    }
   };
 }]);

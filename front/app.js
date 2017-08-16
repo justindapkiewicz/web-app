@@ -3,9 +3,16 @@
 angular.module('WA', ['ui.router',
                       'wa.LandingModule.controller',
                       'wa.WorkLogModule.controller',
-                      'wa.AccountModule.controller'])
+                      'wa.AccountModule.controller',
+                      'wa.UserUtility'])
 .config(['$locationProvider', '$stateProvider', '$urlRouterProvider',
 function($locationProvider, $stateProvider, $urlRouterProvider) {
+  var authenticationResolve = ['userUtility', '$state', function(userUtility, $state) {
+    if (!userUtility.user) {
+      $state.go('home');
+    }
+  }];
+
   $stateProvider
     .state('home', {
       url: '/home',
@@ -20,7 +27,10 @@ function($locationProvider, $stateProvider, $urlRouterProvider) {
     .state('account', {
       url: '/account',
       templateUrl: 'html/account.html',
-      controller: 'AccountController'
+      controller: 'AccountController',
+      resolve: {
+        authenticationResolve: authenticationResolve
+      }
     })
 
   $urlRouterProvider.otherwise('home');
