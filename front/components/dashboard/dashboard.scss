@@ -1,0 +1,108 @@
+.dashboard {
+  #site-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  #site-canvas {
+    -moz-transition: 300ms ease all;
+    -ms-transition: 300ms ease all;
+    -o-transition: 300ms ease all;
+    -webkit-transition: 300ms ease all;
+    transition: 300ms ease all;
+
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .show-nav #site-canvas {
+    -moz-transform: translateX(300px);
+    -ms-transform: translateX(300px);
+    -o-transform: translateX(300px);
+    -webkit-transform: translateX(300px);
+    transform: translateX(300px);
+
+    -moz-transform: translateZ(0) translateX(300px);
+    -ms-transform: translateZ(0) translateX(300px);
+    -o-transform: translateZ(0) translateX(300px);
+    -webkit-transform: translateZ(0) translateX(300px);
+    transform: translateZ(0) translateX(300px);
+
+    -moz-transform: translate3d(300px, 0, 0);
+    -ms-transform: translate3d(300px, 0, 0);
+    -o-transform: translate3d(300px, 0, 0);
+    -webkit-transform: translate3d(300px, 0, 0);
+    transform: translate3d(300px, 0, 0);
+  }
+
+  #site-menu {
+    width: 330px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -300px;
+    background: #fff;
+    padding: 15px 0px 15px 15px;
+    border-right: 1px solid black;
+  }
+
+  #site-wrapper.show-nav #site-canvas {
+    -webkit-transform: translateX(300px);
+    transform: translateX(300px);
+  }
+
+  .dash-content {
+    margin-left: 35px;
+
+    .state-view {
+      overflow: hidden;
+    }
+  }
+
+  .toggle-nav, .item {
+    cursor: pointer;
+  }
+
+  .menu-tabs, .menu-title {
+    float: left;
+  }
+
+  .menu-items {
+    font-size: 22px;
+
+    .menu-option {
+      padding: 5px 0px 5px 0px;
+    }
+  }
+
+  .menu-title {
+    font-size: 20px;
+    margin-left: 292px;
+  }
+
+  .vertical {
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform: rotate(90deg);
+    white-space:nowrap;
+    display:block;
+    bottom:0;
+    width:20px;
+    height:20px;
+  }
+
+  .form-group {
+    float: left !important
+  }
+
+  .nav-arrow {
+    font-size: 15px;
+    padding-left: 5px;
+  }
+}

@@ -1,0 +1,24 @@
+<div class="dashboard">
+  <header-directive></header-directive>
+  <div id="site-wrapper">
+    <div id="site-canvas">
+      <div id="site-menu">
+        <div class="menu-tabs">
+          <ul class="menu-items">
+            <li class="menu-option" ng-repeat="menuTab in menuTabs">
+              <a class="item" ui-sref="{{menuTab.state}}" ng-click="toggleNav()">{{menuTab.tab}}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-title vertical">
+          <a class="toggle-nav" ng-click="toggleNav()">
+            Navigation Tabs <span class="nav-arrow glyphicon {{arrow}}"></span>
+          </a>
+        </div>
+      </div>
+      <div class="dash-content" ng-style="{'min-height':getRemainingHeight()}">
+        <div class="state-view" ui-view></div>
+      </div>
+    </div>
+  </div>
+</div>

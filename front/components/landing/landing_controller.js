@@ -11,16 +11,25 @@ function($scope, ajaxUtil, $cookies, $state, userUtility) {
   $scope.message = "";
 
   $scope.login = function() {
-    var loginUrl = '/login?username='+$scope.loginData.username+'&password='+$scope.loginData.password;
+    //var loginUrl = '/login?username='+$scope.loginData.username+'&password='+$scope.loginData.password;
 
-    ajaxUtil.get(loginUrl, $scope, "onLogin", "onLoginError", true);
+    //ajaxUtil.get(loginUrl, $scope, "onLogin", "onLoginError", true);
+    var data = {
+      username: "Test",
+      realName: "Test",
+      permission: "Administrator",
+      sessionId: "1234-TEST-1234"
+    };
+
+    userUtility.defineUserData(data);
+    $state.go('dashboard');
   };
 
-  $scope.onLogin = function(data) {
+  /*$scope.onLogin = function(data) {
     $scope.loginData = {};
     $scope.message = "";
     userUtility.defineUserData(data);
-    $state.go('account');
+    $state.go('dashboard');
   };
 
   $scope.onLoginError = function(error, status) {
@@ -36,5 +45,5 @@ function($scope, ajaxUtil, $cookies, $state, userUtility) {
       default:
         $scope.message = "We recieved an unexpected error - Please try again";
     }
-  };
+  };*/
 }]);
